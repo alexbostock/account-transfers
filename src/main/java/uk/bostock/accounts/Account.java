@@ -34,6 +34,9 @@ public class Account {
 		return balance;
 	}
 
+        /**
+         * @return account number
+         */
 	public String getAccountNumber() {
 		return prettyNumber;
 	}
