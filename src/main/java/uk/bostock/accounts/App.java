@@ -14,7 +14,7 @@ public class App {
 
 		post("/accounts", (req, res) -> {
 			NewAccountArgs arg = gson.fromJson(req.body(), NewAccountArgs.class);
-			if (args == null) {
+			if (arg == null) {
 				res.status(400);
 				res.type("text/plain");
 				return "400 Bad Request";
