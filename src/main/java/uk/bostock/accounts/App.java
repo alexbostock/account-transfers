@@ -68,7 +68,7 @@ public class App {
                                 return "200 OK";
 		        } catch (InsufficientBalanceException e) {
 			        res.status(409);
-			        return "409 Conflict";
+			        return "409 Conflict (insufficient balance)";
 		        }
 		});
 	}
