@@ -21,11 +21,12 @@ Responds `200 OK` and account balance, or `404 Not Found` if the account does no
 
 *Arguments*
 
-- `"other_account":int` account number of the transfer destination
-- `"value":int` value of money to be transferred
+- `"other_account"` account number of the transfer destination
+- `"value"` value of money to be transferred, as an integer number of pence, cents or similar
 
 *Response*
 
 - `200 OK` on success (requires that both accounts exist, the source account has sufficient balance and the transfer was successful).
+- `400 Bad Request` if the request is invalid, which may occur if the source and destination account numbers are not distinct.
 - `404 Not Found` if either account does not exist.
 - `409 Conflict` if the source account has insufficient balance for the transfer.
