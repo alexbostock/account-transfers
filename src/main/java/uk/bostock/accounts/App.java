@@ -1,7 +1,7 @@
 package uk.bostock.accounts;
 
 import com.google.gson.Gson;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -10,7 +10,7 @@ public class App {
 	public static void main(String[] args) {
 		Gson gson = new Gson();
 
-		Map<String, Account> store = new HashMap<>();
+		Map<String, Account> store = new ConcurrentHashMap<>();
 
 		post("/accounts", (req, res) -> {
 			NewAccountArgs arg = gson.fromJson(req.body(), NewAccountArgs.class);
